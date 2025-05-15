@@ -1,0 +1,35 @@
+---
+title: "Getting Started with MEvalR"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Getting Started with MEvalR}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(MEvalR)
+```
+
+## Define a Theory of Change
+
+```{r}
+goals <- c("Reduce Poverty")
+outcomes <- c("Increased Employment")
+outputs <- c("Skills Training", "Microloans")
+toc <- define_toc(goals, outcomes, outputs)
+toc
+```
+
+## Load Sample Data
+
+```{r eval=FALSE}
+# data <- load_data("your_data.csv")
+```
+
+## Evaluate Alignment
+
+```{r eval=FALSE}
+# evaluate_alignment(toc, data)
+```

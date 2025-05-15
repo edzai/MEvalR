@@ -1,0 +1,73 @@
+---
+title: "Causal Analysis with MEvalR"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Causal Analysis with MEvalR}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+library(MEvalR)
+library(dplyr)
+```
+
+## 🔍 Purpose
+
+This vignette demonstrates how to use the `run_causal_analysis()` function for:
+
+- Difference-in-Differences (DiD)
+- Propensity Score Matching (PSM)
+- DAG validation
+
+---
+
+## 📦 Simulated Data
+
+```{r}
+set.seed(123)
+n <- 500
+data <- data.frame(
+  unit = 1:n,
+  time = rep(c(0, 1), each = n / 2),
+  treatment = rep(c(0, 1), each = n / 2),
+  outcome = rnorm(n, mean = rep(c(5, 6), each = n / 2))
+)
+```
+
+---
+
+## ⚖️ 1. Difference-in-Differences (DiD)
+
+```{r}
+did_results <- run_causal_analysis(data, method = "DiD", outcome = "outcome", treatment = "treatment", time = "time")
+summary(did_results$model)
+```
+
+---
+
+## 🎯 2. Propensity Score Matching (PSM)
+
+```{r}
+data$X1 <- rnorm(n)
+data$X2 <- rbinom(n, 1, 0.5)
+psm_results <- run_causal_analysis(data, method = "PSM", outcome = "outcome", treatment = "treatment", covariates = c("X1", "X2"))
+summary(psm_results$match_model)
+head(psm_results$matched_data)
+```
+
+---
+
+## 🌲 3. DAG Validation
+
+```{r}
+dag_result <- run_causal_analysis(data, method = "DAG", outcome = "outcome", treatment = "treatment")
+dag_result$dag
+```
+
+---
+
+## ✅ Summary
+
+`run_causal_analysis()` provides a unified interface for applying common causal inference methods in M&E workflows.

@@ -1,0 +1,22 @@
+Package: MEvalR
+Title: Monitoring & Evaluation Toolkit for R
+Version: 0.1.0
+Authors@R: person("Edzai Conilias", "Zvobwo", email = "edzai@acalytica.com", role = c("aut", "cre"))
+Description: Tools for Monitoring & Evaluation professionals to manage theory of change models, align data with intended results, run causal inference, and generate impact reports.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.3.1
+Depends: R (>= 3.5.0)
+Imports:
+    dplyr,
+    ggplot2,
+    MatchIt,
+    fixest,
+    dagitty,
+    rmarkdown
+Suggests:
+    knitr,
+    testthat,
+    covr
+VignetteBuilder: knitr

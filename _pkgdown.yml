@@ -1,0 +1,34 @@
+
+template:
+  bootstrap: 5
+
+home:
+  title: "MEvalR: Monitoring & Evaluation Toolkit for R"
+  links:
+    - text: GitHub
+      href: https://github.com/edzai/MEvalR
+
+navbar:
+  structure:
+    left: [home, reference, articles]
+    right: [github]
+  components:
+    github:
+      icon: fa-github
+      href: https://github.com/edzai/MEvalR
+
+articles:
+  - title: "Getting Started"
+    contents:
+      - getting-started
+  - title: "Causal Inference"
+    contents:
+      - causal-analysis
+
+reference:
+  - title: "Core Functions"
+    contents:
+      - define_toc
+      - load_data
+      - evaluate_alignment
+      - run_causal_analysis
