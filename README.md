@@ -36,3 +36,4 @@ A companion **Shiny app** (coming soon!) will allow users to:
 # install.packages("devtools")
 devtools::install_github("edzai/MEvalR")
 ```
+# MEvalR
