@@ -1,5 +1,4 @@
 Package: MEvalR
-<<<<<<< HEAD
 Title: Monitoring & Evaluation Toolkit for R
 Version: 0.1.0
 Authors@R: person("Edzai Conilias", "Zvobwo", email = "edzai@acalytica.com", role = c("aut", "cre"))
@@ -21,7 +20,7 @@ Suggests:
     testthat,
     covr
 VignetteBuilder: knitr
-=======
+
 Type: Package
 Title: Monitoring & Evaluation Toolkit for R
 Version: 0.1.0
@@ -53,4 +52,3 @@ Imports:
 Suggests:
     testthat,
     covr
->>>>>>> 62679c351c55aee5012b7f01bfe9c8105b79046b
